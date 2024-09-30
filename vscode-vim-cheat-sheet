@@ -1,0 +1,310 @@
+% My CHEAT SHEET TO VIM
+% Author: Bruno Kemmer
+% Last Edit: 2024-09-23
+%
+% DISCLAIMER: This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License (http://creativecommons.org/licenses/by-nc-sa/3.0/). The cheatsheet template was adapted from Winston Chang's version found at http://www.stdout.org/~winston/latex/. This cheatsheet is intended for non-commercial use.
+
+
+\documentclass[10pt,landscape]{article}
+\usepackage{multicol}
+\usepackage{ifthen}
+\usepackage[landscape]{geometry}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.5ex}
+
+
+% This sets page margins to .5 inch if using letter paper, and to 1cm       
+% if using A4 paper. (This probably isn't strictly necessary.)              
+% If using another size paper, use default 1cm margins.
+\ifthenelse{\lengthtest { \paperwidth = 11in}}
+	{ \geometry{top=.5in,left=.2in,right=.2in,bottom=.5in} }
+	% {\ifthenelse{ \lengthtest{ \paperwidth = 297mm}}
+		% {\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+		% {\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+	% }
+ 
+% Redefine section commands to use less space 
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%x
+                                {\normalfont\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+                                {-1explus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%
+                                {\normalfont\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {1ex plus .2ex}%
+                                {\normalfont\small\bfseries}}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\raggedright
+\begin{multicols}{3}
+
+% multicol parameters                                                       
+% These lengths are set only within the two main columns                    
+\setlength{\columnseprule}{0.25pt}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+\begin{center}
+     \Large{\underline{\textbf{My Vscode VIM Cheat Sheet}}} \\
+\end{center}
+
+\section{Custom Vscode}
+\verb!<leader>! \hfill \textbf{space}.\\
+\verb!<leader><leader>! \hfill Open previous file.\\
+% \verb!<leader> w! \hfill Save file.\\
+\verb!<leader> t! \hfill Open file prompt.\\
+\verb!J! \hfill Join lines with comments.\\
+\verb!-! \hfill Open breadcrumbs (navigation).\\
+\verb!<C-Shift-m>! \hfill Toggle bottom tray.\\
+\verb!<C-Tab>! \hfill Navigate between tabs.\\
+\verb!<C-number>! \hfill Navigate between split windows.\\
+\verb!<C-CR(Enter)>! \hfill Insert line bellow.\\
+\verb!<C-Shift-CR(Enter)>! \hfill Insert line above.\\
+\verb!! \hfill text.\\
+\verb!<Alt-j>/<Alt-k>! \hfill Next/Previous code suggestion.\\
+\verb!gpd! \hfill Peek Definitions.\\
+\verb!gh! \hfill Show definition preview hover.\\
+\verb!gd! \hfill Jump to definition.\\
+\verb!gb! \hfill Adds another cursor on the next word which is the same as the word inside cursor.\\
+\verb!af! \hfill On visual mode selects increasingly large blocks of text.\\
+\verb!gq! \hfill Quick fix.\\
+\verb!gf! \hfill Reference search.\\
+\verb!<leader> ar! \hfill Find all references.\\
+\verb!F6! \hfill Cycle between vscode menu sections.\\
+
+\subsection{Vscode navigation - inside file-explorer}
+\verb!<leader> e! \hfill Open file-explorer sidebar.\\
+\verb!! \hfill \\
+\begin{multicols}{2}
+\verb!a! \hfill new file. \\
+\verb!f! \hfill new folder. \\
+\verb!r! \hfill rename item.\\
+\verb! x! \hfill cut item.\\
+\verb! y! \hfill copy item.\\
+\verb! p! \hfill paster item.\\
+\end{multicols}
+
+\subsection{Vscode Debug / Run}
+
+\verb!<C-Shift-d>! \hfill Show debug tab.\\
+\verb!<C-Shift-Y>! \hfill Toggle debug console.\\
+\verb!<leader> r! \hfill Run python code on terminal.\\
+\verb!ge! \hfill On visual mode: Evaluate on debug console.\\
+\verb!gaw! \hfill On visual mode: Add selection to watch list.\\
+\verb!gw / <C-1>!\hfill Focus on watch list tab / goes back.\\
+\verb!! \hfill \\
+\begin{multicols}{2}
+ \verb!F5! \hfill Start debugging.\\
+ \verb!F5! \hfill Continue debugging.\\
+ \verb!F10! \hfill Step over.\\
+ \verb!F11! \hfill Step into.\\
+ \verb! Shift-F11! \hfill Step out.\\
+ \verb! Shift-F5! \hfill Stop.\\
+ \verb! F9! \hfill Add a breakpoint to the current line.\\
+\end{multicols}
+\columnbreak
+
+\subsection{Vscode bookmarks extension}
+\verb!<leader> b! \hfill List bookmarks.\\
+\verb!<leader> m! \hfill Toggle bookmark.\\
+\verb!<leader> l! \hfill Toggle labeled bookmark.\\
+\verb!<leader> n/N! \hfill Next/Previous bookmark.\\
+\verb!! \hfill \\
+\subsection{Vscode Github extension}
+\verb!<C-Shift G>! \hfill Open github tab.\\
+\verb!<leader> g a! \hfill Open actions page.\\
+\verb!<leader> g r! \hfill Open repository page.\\
+\verb!<leader> g c! \hfill Open commits page.\\
+\verb!<leader> g y! \hfill Copy a permalink of the current line.\\
+\verb!! \hfill \\
+
+% \textbf{Remember: }\textit{These can all be used with a repeater.}
+\subsection{VIM}
+% \verb!h/j/k/l! \hfill Move left/down/up/right.\\
+\verb!<C-d>! \hfill Move half-screen down.\\
+\verb!<C-u>! \hfill Move half-screen up.\\
+\verb!<C-f>! \hfill Move full screen forward.\\
+\verb!<C-b>! \hfill Move full screen backward.\\
+% \verb! !\\
+\verb!H / M / L! \hfill Bring cursor to top/middle/bottom of screen.\\
+% \verb!M! \hfill Bring cursor to middle of screen.\\
+% \verb!H! \hfill Bring cursor to top of screen.\\
+% \verb!3H! \hfill Bring cursor to 3 lines from top of screen.\\
+% \verb!L! \hfill Bring cursor to bottom of screen.\\
+% \verb!3L! \hfill Bring cursor to 3 lines from bottom of screen.\\
+% \verb! !\\
+\verb!w/b! \hfill Go to next/previous delimiter.\\
+\verb!W/B! \hfill Go to next/previous word.\\
+\verb! !\\
+\verb!$! \hfill Go to end of line.\\
+\verb!^! \hfill Go to first letter of a line.\\
+\verb!0! \hfill Go to beginning of a line.\\
+\verb!gg/G! \hfill Go to beginning/end of the file.\\
+\verb!{/}! \hfill Go to beginning/end of paragraph.\\ 
+\verb!:8! \hfill Go to line 8.\\
+\verb! !\\
+\verb!fP/FP! \hfill Find next/previous P in the line.\\
+\verb!tP/TP! \hfill Find delimiter before/after next P.\\
+\verb!;/,! \hfill Go to next/previous find.\\
+\verb! !\\
+\verb!yiw! \hfill Yank(copy) inside word\\
+\verb!viwp! \hfill Select inside word and paste\\
+\verb!viw"0p! \hfill Select inside word and paste content of register 0\\
+\verb!di"/ci"! \hfill Delete/change text inside "".\\
+\verb!da"/ca"! \hfill Delete/change text inside "", delete "".\\
+\verb!u! \hfill Undo change.\\
+\verb!Ctrl + r! \hfill Redo change.\\
+\verb!<C-r><register>! \hfill On insert mode: paste value of reg\\
+% \verb!v! \hfill Visual mode. \verb!j/k! to highlight text.\\
+% \verb!V! \hfill Visual Line mode. Highlight full lines.\\
+\verb! !\\
+\textit{In Visual mode, pressing \% under a bracket highlights until matching bracket.}\\
+\columnbreak
+
+% \section{Editing}
+
+% \verb!o/O! \hfill Add line below/above, enter insert mode.\\
+% \verb! ! \\
+% \verb!x/X! \hfill Delete character on/before cursor.\\
+% \verb! !\\
+% \verb!dw/db! \hfill Delete next/previous word.\\
+% \verb!cw/cb! \hfill Change next/previous word.\\
+% \verb! !\\
+% \verb!dd/cc! \hfill Delete/change entire line.\\
+% \verb! !\\
+% \verb!dj/cj! \hfill Delete/change two lines downward.\\\
+% \verb!dk/ck! \hfill Delete/change two lines upward.\\
+% \verb! !\\
+% \verb!d[motion]! \hfill Delete according to motion.\\
+% \verb!c[motion]! \hfill Change according to motion.\\
+% \verb! !\\
+% \verb!di"/ci"! \hfill Delete/change text inside "".\\
+% \verb!da"/ca"! \hfill Delete/change text inside "", delete "".\\
+% \verb!>>/<<! \hfill Indent/unindent in normal mode.\\
+
+% % \verb! ! \\
+% \verb!u! \hfill Undo change.\\
+% \verb!Ctrl + r! \hfill Redo change.\\
+% % \verb! !\\
+% \verb!yw/yy! \hfill Copy a word/line.\\
+% \verb! ! \\
+% \verb!p/P! \hfill Paste, delete character on/after cursor.\\
+% \verb! !\\
+% \verb!>>/<<! \hfill Indent/unindent in normal mode.\\
+% \verb!=3j! \hfill Autoindent 3 lines after cursor.\\
+
+\subsection{Search and Replace}
+\verb!/[searchterm]! \hfill Search. \verb!n/N! for next/previous.\\
+\verb!?[searchterm]! \hfill Backward search.\\
+\textit{You can use regular expressions and escape chars.}\\
+\textit{Can be used as motions with delete, change, copy.}\\
+\verb! !\\
+\verb!:%s/old/new! \hfill Replace old by new. \verb!%! is the scope.\\
+\hfill \verb!/! \textit{can be replaced by other separators.}\\
+\verb!:%s/old/new/c! \hfill Prompt before each replacement.\\
+
+\subsection{Macros}
+\verb!q<register><commands>q! \hfill Record a macro\\
+\verb!qa! \hfill Record a macro in register "a".\\
+\verb!j0q! \hfill Stop recording the macro (commands \verb!j0!).\\
+\verb!:reg! \hfill List all registers.\\
+\verb!@a! \hfill Execute macro in register "a".\\
+\verb!@@! \hfill Execute previous macro.\\
+
+\subsection{Buffers, Windows and Tabs}
+\verb!:ls! \hfill List all buffers in session.\\
+\verb!:bn/:bp! \hfill Navigate to next/previous buffer.\\
+\verb!:bp! or \verb!:b#! \hfill Navigate to previous buffer.\\
+\verb!:bf/:bl! \hfill Navigate to first/last buffer.\\
+\verb!:bd! \hfill Delete current buffer.\\
+\verb!:bd1! \hfill Delete buffer labeled "1".\\ 
+\verb! !\\
+\verb!:vs ~/file! \hfill Open file in vertical pane.\\
+\verb!:sp ~/file! \hfill Open file in horizontal pane.\\   
+
+% not implemented on vscode yet!
+% \verb!:vert sb2! \hfill Open buffer 2 in vertical pane.\\
+% \verb!:sb2! \hfill Opens buffer 2 in horizontal pane.\\
+\verb! !\\
+\verb!<C-w> + h/j/k/l or <C-number>! \hfill Move to * window.\\
+\verb!<C-w> + H/J/K/L! \hfill Move window to * side.\\                                   
+\verb!<C-w> + +/-! \hfill Increase/Decrease window height by 1.\\      
+% \verb!<C-w> -! \hfill Decrease window height by 1.\\                        
+\verb!<C-w> + >/<!  \hfill Increase/Decrease window width by 1.\\                      
+% \verb!<C-w> + >!  \hfill Increase window width by 1.\\     
+% \verb!Ctrl + w + <!  \hfill Decrease window width by 1.\\           
+\verb!<C-w> + =!  \hfill Equalize height and width of all windows.\\
+\verb! !\\
+% \verb!:e ~/file! \hfill Edit a file.\\
+% \verb!:tabe ~/file! \hfill Edit file in new tab.\\
+% \verb!gt! \hfill Move one tab forward.\\
+% \verb!gT! \hfill Move one tab backward.\\
+
+% \section{Miscellaneous}
+% \verb!:se ft=python! \hfill sets filetype.\\
+% \verb!:so ~/file! \hfill rebuilds a file.\\
+% \verb!:so %! \hfill rebuilds this file.\\
+% % not implemented on vscode yet!
+% \verb!:sav ~/file! \hfill Saves file elsewhere.\\
+% \verb! !\\
+% \verb!:!!\verb!ls -lah! \hfill Access the command line.\\
+% \verb!:r !!\verb!date! \hfill Append command output to cursor.\\
+% \verb! !\\
+% \verb!:map ,s :sav<CR>! \hfill Map ",rs" to cmd. CR is Enter.\\
+
+% \section{Defined in my .vimrc}
+
+% \verb!OO! \hfill Insert line above cursor.\\
+% \verb!oo! \hfill Insert line below cursor.\\
+% \verb!,ci! \hfill Toggle line comments.\\
+% \verb!,n! \hfill Toggle file navigation.\\
+% \verb!,k! \hfill Strip whitespace.\\
+
+% \begin{table}[]
+% \begin{tabular}{ll}
+% c & c\$                          \\
+% s & cl                           \\
+% S & \textasciicircum{}c          \\
+% I & \textasciicircum{}i          \\
+% A & \$a                          \\
+% o & A\textless{}cr\textgreater{} \\
+% O & ko                          
+% \end{tabular}
+% \end{table}
+
+\subsection{Equivalents}
+% \centering
+\begin{tabular}{|r|l|}
+\hline
+% Afghanistan & AF \\
+% Aland Islands & AX \\
+% Albania    &AL  \\
+% Algeria   &DZ \\
+% American Samoa & AS \\
+% Andorra & AD   \\
+% Angola & AO \\
+\verb!c! & \verb!c$!          \\
+\verb!s! & \verb!cl!          \\
+\verb!S! & \verb!^c!          \\
+\verb!I! & \verb!^i!          \\
+\verb!A! & \verb!$a!          \\
+\verb!o! & \verb!A<CR>!       \\
+\verb!O! & \verb!ko!          \\
+\hline
+\end{tabular}
+\label{table:ta}
+
+\end{multicols}
+\end{document}
+
