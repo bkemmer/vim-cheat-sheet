@@ -1,6 +1,6 @@
 % My CHEAT SHEET TO VIM
 % Author: Bruno Kemmer
-% Last Edit: 2024-09-23
+% Last Edit: 2024-10-02
 %
 % DISCLAIMER: This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License (http://creativecommons.org/licenses/by-nc-sa/3.0/). The cheatsheet template was adapted from Winston Chang's version found at http://www.stdout.org/~winston/latex/. This cheatsheet is intended for non-commercial use.
 
@@ -205,6 +205,7 @@
 % \verb!=3j! \hfill Autoindent 3 lines after cursor.\\
 
 \subsection{Search and Replace}
+\verb!*! \hfill Search for word under the cursor.\\
 \verb!/[searchterm]! \hfill Search. \verb!n/N! for next/previous.\\
 \verb!?[searchterm]! \hfill Backward search.\\
 \textit{You can use regular expressions and escape chars.}\\
@@ -307,4 +308,3 @@
 
 \end{multicols}
 \end{document}
-
