@@ -1,0 +1,386 @@
+% My CHEAT SHEET TO VIM
+% Author: Bruno Kemmer
+% Last Edit: 2025-01-29
+%
+% DISCLAIMER: This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License (http://creativecommons.org/licenses/by-nc-sa/3.0/). The cheatsheet template was adapted from Winston Chang's version found at http://www.stdout.org/~winston/latex/. This cheatsheet is intended for non-commercial use.
+
+
+\documentclass[10pt,landscape]{article}
+\usepackage{multicol}
+\usepackage{ifthen}
+\usepackage[landscape]{geometry}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.5ex}
+
+
+% This sets page margins to .5 inch if using letter paper, and to 1cm       
+% if using A4 paper. (This probably isn't strictly necessary.)              
+% If using another size paper, use default 1cm margins.
+\ifthenelse{\lengthtest { \paperwidth = 11in}}
+	{ \geometry{top=.5in,left=.2in,right=.2in,bottom=.5in} }
+	% {\ifthenelse{ \lengthtest{ \paperwidth = 297mm}}
+		% {\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+		% {\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+	% }
+ 
+% Redefine section commands to use less space 
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%x
+                                {\normalfont\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+                                {-1explus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%
+                                {\normalfont\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {1ex plus .2ex}%
+                                {\normalfont\small\bfseries}}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\raggedright
+\begin{multicols}{3}
+
+% multicol parameters                                                       
+% These lengths are set only within the two main columns                    
+\setlength{\columnseprule}{0.25pt}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+\begin{center}
+     \Large{\underline{\textbf{My VIM Cheat Sheet}}} \\
+\end{center}
+
+
+\verb! !\\
+
+\section{Plugins}
+\verb! !\\
+\subsection{NERDTree}
+
+\verb!<Leader> t! \hfill Focus to NERDTree window\\
+\verb!<Leader> e! \hfill Toogle NERDTree window\\
+\verb!<C-f>! \hfill Highlight the current file on NERDTree window\\
+
+
+\verb! !\\
+
+\subsection{Jedi-vim}
+
+\verb!<C-Space>! \hfill Python Auto-Completion\\
+\verb!<C-n> / <C-p>! \hfill Next/Previous suggestions\\
+\verb!<Leader>g! \hfill Goto assignment\\
+\verb!<Leader>d! \hfill Goto definition\\
+\verb!<Leader>s! \hfill Goto (typing) stub\\
+\verb!K! \hfill Show Documentation/Pydoc\\
+\verb!<Leader>r! \hfill Renaming\\
+\verb!<Leader>n! \hfill Show usages\\
+\verb!:Pyimport os! \hfill Opens the `os` module\\
+
+\verb! !\\
+\subsection{Vim-Commentary}
+
+\verb!gcc! \hfill Comment a line\\
+\verb!gc<motion>! \hfill Comment the target motion\\
+\verb!gc! \hfill On visual: Comment the selection\\
+
+\verb! !\\
+\subsection{Vim-slime}
+\verb!<C-c><C-c>! \hfill Send text to REPL\\
+\verb!<C-c>v! \hfill Reconfigure target\\
+
+
+
+% \subsection{Vscode Debug / Run}
+
+% \verb!<C-Shift-d>! \hfill Show debug tab.\\
+% \verb!<C-Shift-Y>! \hfill Toggle debug console.\\
+% \verb!<leader> r! \hfill Run python code on terminal.\\
+% \verb!ge! \hfill On visual mode: Evaluate on debug console.\\
+% \verb!gaw! \hfill On visual mode: Add selection to watch list.\\
+% \verb!gw / <C-1>!\hfill Focus on watch list tab / goes back.\\
+% \verb!! \hfill \\
+% \begin{multicols}{2}
+%  \verb!F5! \hfill Start debugging.\\
+%  \verb!F5! \hfill Continue debugging.\\
+%  \verb!F10! \hfill Step over.\\
+%  \verb!F11! \hfill Step into.\\
+%  \verb! Shift-F11! \hfill Step out.\\
+%  \verb! Shift-F5! \hfill Stop.\\
+%  \verb! F9! \hfill Add a breakpoint to the current line.\\
+% \end{multicols}
+% \columnbreak
+
+% \subsection{Vscode bookmarks extension}
+% \verb!<leader> b! \hfill List bookmarks.\\
+% \verb!<leader> m! \hfill Toggle bookmark.\\
+% \verb!<leader> l! \hfill Toggle labeled bookmark.\\
+% \verb!<leader> n/N! \hfill Next/Previous bookmark.\\
+% \verb!! \hfill \\
+% \subsection{Vscode Github extension}
+% \verb!<C-Shift G>! \hfill Open github tab.\\
+% \verb!<leader> g a! \hfill Open actions page.\\
+% \verb!<leader> g r! \hfill Open repository page.\\
+% \verb!<leader> g c! \hfill Open commits page.\\
+% \verb!<leader> g y! \hfill Copy a permalink of the current line.\\
+% \verb!! \hfill \\
+
+% \textbf{Remember: }\textit{These can all be used with a repeater.}
+\verb! !\\
+\subsection{VIM}
+
+\verb!<leader>! \hfill \textbf{space}\\
+\verb!.! \hfill Repeats previous command\\
+
+\verb! !\\
+\subsection{Movement}
+
+\verb!<C-d>! \hfill Move half-screen down.\\
+\verb!<C-u>! \hfill Move half-screen up.\\
+\verb!<C-f>! \hfill Move full screen forward.\\
+\verb!<C-b>! \hfill Move full screen backward.\\
+\verb!H / M / L! \hfill Bring cursor to top/middle/bottom of screen.\\
+\verb!3H! \hfill Bring cursor to 3 lines from top of screen.\\
+\verb!3L! \hfill Bring cursor to 3 lines from bottom of screen\\
+\verb!}! \hfill Go forward by paragraph (the next blank line)\\
+\verb!{! \hfill Go backward by paragraph (the previous blank line)\\
+
+\verb! !\\
+\verb!<C-w> + h/j/k/l or <C-number>! \hfill Move to * window.\\
+\verb!<C-w> + H/J/K/L! \hfill Move window to * side.\\                                   
+\verb!<C-w> + +/-! \hfill Increase/Decrease window height by 1.\\      
+\verb!<C-w> -! \hfill Decrease window height by 1.\\                        
+\verb!<C-w> + >/<!  \hfill Increase/Decrease window width by 1.\\                      
+\verb!<C-w> + >!  \hfill Increase window width by 1.\\     
+\verb!Ctrl + w + <!  \hfill Decrease window width by 1.\\           
+\verb!<C-w> + =!  \hfill Equalize height and width of all windows.\\
+
+\verb! !\\
+\subsection{Buffers, Windows and Tabs}
+
+\verb!:ls! \hfill List all buffers in session.\\
+\verb!:bn/:bp! \hfill Navigate to next/previous buffer.\\
+\verb!:bp! or \verb!:b#! \hfill Navigate to previous buffer.\\
+\verb!:bf/:bl! \hfill Navigate to first/last buffer.\\
+\verb!:bd! \hfill Delete current buffer.\\
+\verb!:bd1! \hfill Delete buffer labeled "1".\\ 
+\verb! !\\
+
+\verb!gt! \hfill Next tab\\
+\verb!gT! \hfill Previous tab\\
+\verb!<C-t>! \hfill :tabnew\\
+\verb!<C-^>! \hfill Return to previous file\\
+\verb!<Leader>wo! \hfill Open current split in new tab\\
+\verb!<C-hjkl>! \hfill Switch between splits\\
+
+
+\verb! !\\
+
+
+\verb!:vs ~/file! \hfill Open file in vertical pane.\\
+\verb!:sp ~/file! \hfill Open file in horizontal pane.\\   
+\verb!:vert sb2! \hfill Open buffer 2 in vertical pane.\\
+\verb!:sb2! \hfill Opens buffer 2 in horizontal pane.\\
+\verb! !\\
+
+\verb!:e ~/file! \hfill Edit a file.\\
+\verb!:tabe ~/file! \hfill Edit file in new tab.\\
+
+\verb! !\\
+\subsection{Editing}
+\verb!J! \hfill Join lines with comments\\
+\verb!w/b! \hfill Go to next/previous delimiter.\\
+\verb!W/B! \hfill Go to next/previous word.\\
+\verb! !\\
+\verb!$! \hfill Go to end of line.\\
+\verb!^! \hfill Go to first letter of a line.\\
+\verb!0! \hfill Go to beginning of a line.\\
+\verb!gg/G! \hfill Go to beginning/end of the file.\\
+\verb!{/}! \hfill Go to beginning/end of paragraph.\\ 
+\verb!:8! \hfill Go to line 8.\\
+\verb! !\\
+\verb!fP/FP! \hfill Find next/previous P in the line.\\
+\verb!tP/TP! \hfill Find delimiter before/after next P.\\
+\verb!;/,! \hfill Go to next/previous find.\\
+\verb! !\\
+\verb!yiw! \hfill Yank(copy) inside word\\
+\verb!viwp! \hfill Select inside word and paste\\
+\verb!viw"0p! \hfill Select inside word and paste content of register 0\\
+\verb!di"/ci"! \hfill Delete/change text inside "".\\
+\verb!da"/ca"! \hfill Delete/change text inside "", delete "".\\
+\verb!u! \hfill Undo change.\\
+\verb!Ctrl + r! \hfill Redo change.\\
+\verb!v! \hfill Visual mode. \verb!j/k! to highlight text.\\
+\verb!V! \hfill Visual Line mode. Highlight full lines.\\
+\verb! !\\
+\textit{In Visual mode, pressing \% under a bracket highlights until matching bracket.}\\
+\verb!>>/<<! \hfill Indent/unindent in normal mode.\\
+\verb!=3j! \hfill Autoindent 3 lines after cursor.\\
+
+% \columnbreak
+
+
+\subsection{Search and Replace}
+\verb!:s/foo/bar/g! \hfill Replace each foo by bar (current line).\\
+\verb!:%s/foo/bar/g! \hfill Replace each foo by bar (all lines).\\
+\verb!:%s/foo/bar/gc! \hfill Replace each foo by bar (asking).\\
+\verb! ! \\
+\verb!*! \hfill Search for word under the cursor.\\
+\verb!/[searchterm]! \hfill Search. \verb!n/N! for next/previous.\\
+\verb!?[searchterm]! \hfill Backward search.\\
+\textit{You can use regular expressions and escape chars.}\\
+\textit{Can be used as motions with delete, change, copy.}\\
+\verb!/! \textit{can be replaced by other separators,} \verb!%! \verb!#! etc.\\
+
+% \verb! !\\
+\subsection{Marks}
+
+Marks allow you to jump to designated points in your code.
+\verb!m{a-z}! \hfill Set mark {a-z} at cursor position\\
+\verb!m{A-Z}! \hfill Sets a global mark (across files)\\
+\verb!'{a-z}! \hfill Goto start of the line of the mark\\
+\verb!''! \hfill Go back to the previous jump location\\
+
+
+\columnbreak
+
+% \verb! !\\
+\subsection{Macros and Registers}
+\verb!q<register><commands>q! \hfill Record a macro in register\\
+\verb!qr! \hfill Start recording a macro in register "r" (q quits).\\
+\verb!@r! \hfill Execute macro in register "r".\\
+\verb!@@! \hfill Execute previous macro.\\
+\verb! !\\
+
+\verb!:reg! \hfill List all registers.\\
+\verb!"r! \hfill Access content of register r.\\
+\verb!"ry! \hfill Yank to register r.\\
+\verb!""! \hfill Unnamed register has the content of the last yank or deleted text.\\
+\verb!"0 to "9! \hfill Previous yanked of deleted text\\
+\verb!".! \hfill The last inserted text\\
+\verb!":! \hfill The last command executed (@: runs again)\\
+\verb!"+ and "*! \hfill Have the systems clipboard\\
+\verb!<C-r><register>! \hfill On insert mode: paste value of reg\\
+
+
+
+
+
+\verb! !\\
+\subsection{Miscellaneous}
+\verb!:se ft=python! \hfill sets filetype.\\
+\verb!:so ~/file! \hfill rebuilds a file.\\
+\verb!:so %! \hfill rebuilds this file.\\
+% not implemented on vscode yet!
+\verb!:sav ~/file! \hfill Saves file elsewhere.\\
+\verb!:!!\verb!ls -lah! \hfill Access the command line.\\
+\verb!:r !!\verb!date! \hfill Append command output to cursor.\\
+\verb! !\\
+\verb=:%!jq . --tab= \hfill Prettify JSON file with tabs using jq.\\
+
+
+\verb! !\\
+\subsection{Documentation}
+\verb!<C-]! \hfill Follow documentation hyperlink.\\
+\verb!<C-o>! \hfill Go back.\\
+
+% \textbf{To comment a block of text:}
+% Go to the start of the first line, and in Visual block mode: \verb!<C-V>! select all lines, \verb!<S-I>! insert the comment char in the fist line and \verb!<CR>! after a second it will appear on the other lines.
+
+\verb! !\\
+\subsection{Folds}
+\verb!zc! \hfill Close Fold.\\
+\verb!zo! \hfill Open Fold.\\
+\verb!za! \hfill Toogle Fold.\\
+% \columnbreak
+
+\verb! !\\
+\subsection{Equivalents}
+\begin{center}
+\begin{tabular}{|r|l|}
+
+\hline
+\verb!c! & \verb!c$!          \\
+\verb!s! & \verb!cl!          \\
+\verb!S! & \verb!^c!          \\
+\verb!I! & \verb!^i!          \\
+\verb!A! & \verb!$a!          \\
+\verb!o! & \verb!A<CR>!       \\
+\verb!O! & \verb!ko!          \\
+\hline
+\end{tabular}
+\label{table:ta}
+\end{center}
+
+
+\columnbreak
+
+
+% \verb! !\\
+% \verb! !\\
+\section{Tmux}
+\verb! !\\
+\subsection{Sessions}
+\verb!default prefix changed to <C-a>! \\
+\verb!tmux! \hfill starts a new session.\\
+\verb!tmux new -s NAME! \hfill starts it with that name.\\
+\verb!tmux ls! \hfill lists the current sessions.\\
+\verb!<C-a> d! \hfill detaches the current session.\\
+\verb!tmux a! \hfill attach to last session.\\
+\verb! !\\
+
+\subsection{Windows}
+\verb!<C-a> c! \hfill Creates a new window. To close it you can just terminate the shells doing \verb!<C-d>!.\\
+\verb!<C-a> N! \hfill Go to the N th window. Note they are numbered.\\
+\verb!<C-a> p! \hfill Goes to the previous window.\\
+\verb!<C-a> n! \hfill Goes to the next window.\\
+\verb!<C-a> ,! \hfill Rename the current window.\\
+\verb!<C-a> w! \hfill List current windows.\\
+\verb! !\\
+
+\subsection{Panes}
+\verb!<C-a> |! \hfill Split the current pane horizontally. Default \textit{"}.\\
+\verb!<C-a> -! \hfill Split the current pane vertically. Default \textit{\%}.\\
+\verb!<M-direction>! \hfill Move to the pane to direction.\\
+\verb!<C-a> z! \hfill Toggle zoom for the current pane. \\
+\verb!<C-a> [! \hfill Start scrollback. You can then press \verb!<space>! to start a selection and \verb!<enter>! to copy that selection. \\
+\verb!<C-a> <space>! \hfill Cycle through pane arrangements. \\
+\verb! !\\
+\subsection{Multiple Monitors}
+Create sessions for multiple monitors:
+\verb!tmux new -s left_monitor!\\
+\verb!tmux new -r left_monitor -s right_monitor!\\
+\verb! !\\
+\verb! !\\ Next item
+\verb! !\\
+\verb! !\\
+\verb! !\\
+\verb! !\\
+\verb! !\\
+\verb! !\\
+\verb! !\\
+
+
+
+
+% column 1
+\columnbreak
+\section{}
+\verb! !\\
+
+\verb! !\\
+\verb! !\\
+
+
+
+
+\end{multicols}
+\end{document}
