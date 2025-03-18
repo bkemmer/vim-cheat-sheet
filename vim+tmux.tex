@@ -64,26 +64,50 @@
 
 \section{Plugins}
 \verb! !\\
-\subsection{NERDTree}
 
-\verb!<Leader> t! \hfill Focus to NERDTree window\\
-\verb!<Leader> e! \hfill Toogle NERDTree window\\
-\verb!<C-f>! \hfill Highlight the current file on NERDTree window\\
-
+\subsection{Mini.nvim}
+\subsection{mini.files}
+\verb!<Leader>e! \hfill Open file Explorer \\
+\verb!g?! \hfill Open commands help \\
+\verb!m<char>! \hfill add file to a \verb!<char>! bookmark \\
+\verb!'<char>! \hfill open the \verb!<char>! bookmark \\
+\verb!g.! \hfill Toogle show .dotfiles \\
 
 \verb! !\\
+\subsection{mini.picker}
+\verb!<Leader>f! \hfill Run file picker\\
+\verb!<Leader>g! \hfill Run file picker for git files\\
+\verb!<Leader>b! \hfill Run buffers picker\\
+\verb!<Leader>l! \hfill Pattern matching with live feedback\\
+\verb!<Leader>h! \hfill Run picker on previous files\\
+\verb! !\\
+\subsection{mini.ai}
+\verb!vaq \ vab! \hfill visual selects quotes of brackets\\
+\hfill \verb!i! with spaces and \verb!a! without\\
+\verb!vinq \ vilb! \hfill visual selects next/last bracket\\
 
-\subsection{Jedi-vim}
+% \verb! !\\
+\subsection{mini.surrounds}
+\verb!sa! \hfill add surroundings \\
+\verb!sd! \hfill delete surroundings \\
+\verb!sr! \hfill replace surroundings \\
+\verb!sf \ sF! \hfill Find surroundings \\
+\verb!sh! \hfill Highligh surroundings \\
 
-\verb!<C-Space>! \hfill Python Auto-Completion\\
-\verb!<C-n> / <C-p>! \hfill Next/Previous suggestions\\
-\verb!<Leader>g! \hfill Goto assignment\\
-\verb!<Leader>d! \hfill Goto definition\\
-\verb!<Leader>s! \hfill Goto (typing) stub\\
-\verb!K! \hfill Show Documentation/Pydoc\\
-\verb!<Leader>r! \hfill Renaming\\
-\verb!<Leader>n! \hfill Show usages\\
-\verb!:Pyimport os! \hfill Opens the `os` module\\
+
+\subsection{mini.basics}
+\verb!j! \hfill Move down by visible lines with no [count]\\
+\verb!k! \hfill Move up by visible lines with no [count]\\
+\verb!go! \hfill Add [count] empty lines after cursor\\
+\verb!gO! \hfill Add [count] empty lines before cursor\\
+\verb!gy! \hfill Copy to system clipboard\\
+\verb!gp! \hfill Paste from system clipboard\\
+\verb!gV! \hfill Visually select latest changed or yanked text\\
+\verb!g/! \hfill Search inside current visual selection\\
+\verb!*! \hfill Search forward for current visual selection\\
+\verb!#! \hfill Search backward for current visual selection\\
+\verb!<C-s>! \hfill Save and go to Normal mode\\
+
 
 \verb! !\\
 \subsection{Vim-Commentary}
@@ -92,61 +116,29 @@
 \verb!gc<motion>! \hfill Comment the target motion\\
 \verb!gc! \hfill On visual: Comment the selection\\
 
-\verb! !\\
-\subsection{Vim-slime}
-\verb!<C-c><C-c>! \hfill Send text to REPL\\
-\verb!<C-c>v! \hfill Reconfigure target\\
+% \verb! !\\
+% \subsection{Vim-slime}
+% \verb!<C-c><C-c>! \hfill Send text to REPL\\
+% \verb!<C-c>v! \hfill Reconfigure target\\
 
 
 
-% \subsection{Vscode Debug / Run}
-
-% \verb!<C-Shift-d>! \hfill Show debug tab.\\
-% \verb!<C-Shift-Y>! \hfill Toggle debug console.\\
-% \verb!<leader> r! \hfill Run python code on terminal.\\
-% \verb!ge! \hfill On visual mode: Evaluate on debug console.\\
-% \verb!gaw! \hfill On visual mode: Add selection to watch list.\\
-% \verb!gw / <C-1>!\hfill Focus on watch list tab / goes back.\\
-% \verb!! \hfill \\
-% \begin{multicols}{2}
-%  \verb!F5! \hfill Start debugging.\\
-%  \verb!F5! \hfill Continue debugging.\\
-%  \verb!F10! \hfill Step over.\\
-%  \verb!F11! \hfill Step into.\\
-%  \verb! Shift-F11! \hfill Step out.\\
-%  \verb! Shift-F5! \hfill Stop.\\
-%  \verb! F9! \hfill Add a breakpoint to the current line.\\
-% \end{multicols}
-% \columnbreak
-
-% \subsection{Vscode bookmarks extension}
-% \verb!<leader> b! \hfill List bookmarks.\\
-% \verb!<leader> m! \hfill Toggle bookmark.\\
-% \verb!<leader> l! \hfill Toggle labeled bookmark.\\
-% \verb!<leader> n/N! \hfill Next/Previous bookmark.\\
-% \verb!! \hfill \\
-% \subsection{Vscode Github extension}
-% \verb!<C-Shift G>! \hfill Open github tab.\\
-% \verb!<leader> g a! \hfill Open actions page.\\
-% \verb!<leader> g r! \hfill Open repository page.\\
-% \verb!<leader> g c! \hfill Open commits page.\\
-% \verb!<leader> g y! \hfill Copy a permalink of the current line.\\
-% \verb!! \hfill \\
-
-% \textbf{Remember: }\textit{These can all be used with a repeater.}
 \verb! !\\
 \subsection{VIM}
 
-\verb!<leader>! \hfill \textbf{space}\\
-\verb!.! \hfill Repeats previous command\\
 
-\verb! !\\
+
+% \verb! !\\
+\verb!<leader>! \hfill \textbf{space}\\
+\verb!.! \hfill \textbf{Repeats} previous command\\
+\verb!<C-r>\! \hfill Paste yanked text on command line\\
 \subsection{Movement}
 
-\verb!<C-d>! \hfill Move half-screen down.\\
-\verb!<C-u>! \hfill Move half-screen up.\\
-\verb!<C-f>! \hfill Move full screen forward.\\
-\verb!<C-b>! \hfill Move full screen backward.\\
+\verb!<C-d>! \hfill Move half-screen \textbf{down}.\\
+\verb!<C-u>! \hfill Move half-screen \textbf{up}.\\
+% \verb! !\\
+\verb!<C-f>! \hfill Move full screen \textbf{forward}.\\
+\verb!<C-b>! \hfill Move full screen \textbf{backward}.\\
 \verb!H / M / L! \hfill Bring cursor to top/middle/bottom of screen.\\
 \verb!3H! \hfill Bring cursor to 3 lines from top of screen.\\
 \verb!3L! \hfill Bring cursor to 3 lines from bottom of screen\\
@@ -176,7 +168,7 @@
 
 \verb!gt! \hfill Next tab\\
 \verb!gT! \hfill Previous tab\\
-\verb!<C-t>! \hfill :tabnew\\
+% \verb!<C-t>! \hfill :tabnew\\
 \verb!<C-^>! \hfill Return to previous file\\
 \verb!<Leader>wo! \hfill Open current split in new tab\\
 \verb!<C-hjkl>! \hfill Switch between splits\\
@@ -210,6 +202,7 @@
 \verb!fP/FP! \hfill Find next/previous P in the line.\\
 \verb!tP/TP! \hfill Find delimiter before/after next P.\\
 \verb!;/,! \hfill Go to next/previous find.\\
+\verb!s<char><char>! \hfill Find using \textbf{Sneak}.\\
 \verb! !\\
 \verb!yiw! \hfill Yank(copy) inside word\\
 \verb!viwp! \hfill Select inside word and paste\\
@@ -225,20 +218,25 @@
 \verb!>>/<<! \hfill Indent/unindent in normal mode.\\
 \verb!=3j! \hfill Autoindent 3 lines after cursor.\\
 
-% \columnbreak
+\columnbreak
 
 
 \subsection{Search and Replace}
 \verb!:s/foo/bar/g! \hfill Replace each foo by bar (current line).\\
 \verb!:%s/foo/bar/g! \hfill Replace each foo by bar (all lines).\\
 \verb!:%s/foo/bar/gc! \hfill Replace each foo by bar (asking).\\
-\verb! ! \\
+% \verb! ! \\
 \verb!*! \hfill Search for word under the cursor.\\
 \verb!/[searchterm]! \hfill Search. \verb!n/N! for next/previous.\\
 \verb!?[searchterm]! \hfill Backward search.\\
 \textit{You can use regular expressions and escape chars.}\\
 \textit{Can be used as motions with delete, change, copy.}\\
 \verb!/! \textit{can be replaced by other separators,} \verb!%! \verb!#! etc.\\
+\verb! !\\
+\verb!:vim[grep] /foo/g! \hfill Find text in files.\\
+\verb!<C-q>! \hfill Add itens to \textbf{quickfix list}.\\
+\verb!<C-R>\! \hfill Paste pattern on command line.\\
+\verb!:vim[grep] //g %! \hfill Find text in current file prev search.\\
 
 % \verb! !\\
 \subsection{Marks}
@@ -250,7 +248,7 @@ Marks allow you to jump to designated points in your code.
 \verb!''! \hfill Go back to the previous jump location\\
 
 
-\columnbreak
+% \columnbreak
 
 % \verb! !\\
 \subsection{Macros and Registers}
@@ -283,24 +281,36 @@ Marks allow you to jump to designated points in your code.
 \verb!:sav ~/file! \hfill Saves file elsewhere.\\
 \verb!:!!\verb!ls -lah! \hfill Access the command line.\\
 \verb!:r !!\verb!date! \hfill Append command output to cursor.\\
-\verb! !\\
+% \verb! !\\
 \verb=:%!jq . --tab= \hfill Prettify JSON file with tabs using jq.\\
 
+
+% \columnbreak
 
 \verb! !\\
 \subsection{Documentation}
 \verb!<C-]! \hfill Follow documentation hyperlink.\\
 \verb!<C-o>! \hfill Go back.\\
+\verb! !\\
+\subsection{Spellcheck}
+\verb!]s / [s! \hfill go to the next/prev misspelled word.\\
+\verb!z=! \hfill correct the current word.\\
+\verb!zg! \hfill add the current word to the spell list.\\
+\verb!zw! \hfill remove the current word from the spell list.\\
+\verb!<leader>s! \hfill toggle spellcheck.\\
 
 % \textbf{To comment a block of text:}
 % Go to the start of the first line, and in Visual block mode: \verb!<C-V>! select all lines, \verb!<S-I>! insert the comment char in the fist line and \verb!<CR>! after a second it will appear on the other lines.
 
 \verb! !\\
 \subsection{Folds}
-\verb!zc! \hfill Close Fold.\\
-\verb!zo! \hfill Open Fold.\\
-\verb!za! \hfill Toogle Fold.\\
-% \columnbreak
+\verb!zR! \hfill Open all folds.\\
+\verb!zM! \hfill Close all folds.\\
+\verb!zr! \hfill Decreases foldlevel by one.\\
+\verb!za! \hfill Toogle Fold at the cursor.\\
+\verb!zk / zj! \hfill Move up/down to next fold.\\
+\verb!za! \hfill Toogle Fold at the cursor.\\
+
 
 \verb! !\\
 \subsection{Equivalents}
@@ -309,7 +319,7 @@ Marks allow you to jump to designated points in your code.
 
 \hline
 \verb!c! & \verb!c$!          \\
-\verb!s! & \verb!cl!          \\
+% \verb!s! & \verb!cl!          \\
 \verb!S! & \verb!^c!          \\
 \verb!I! & \verb!^i!          \\
 \verb!A! & \verb!$a!          \\
@@ -321,13 +331,16 @@ Marks allow you to jump to designated points in your code.
 \end{center}
 
 
+% \columnbreak
+
+
+% \verb! !\\
+% \verb! !\\
+
 \columnbreak
 
-
-% \verb! !\\
-% \verb! !\\
 \section{Tmux}
-\verb! !\\
+% \verb! !\\
 \subsection{Sessions}
 \verb!default prefix changed to <C-a>! \\
 \verb!tmux! \hfill starts a new session.\\
@@ -344,6 +357,7 @@ Marks allow you to jump to designated points in your code.
 \verb!<C-a> n! \hfill Goes to the next window.\\
 \verb!<C-a> ,! \hfill Rename the current window.\\
 \verb!<C-a> w! \hfill List current windows.\\
+\verb!<S-left> \ <S-right>! \hfill Move current window left of right.\\
 \verb! !\\
 
 \subsection{Panes}
@@ -359,7 +373,7 @@ Create sessions for multiple monitors:
 \verb!tmux new -s left_monitor!\\
 \verb!tmux new -r left_monitor -s right_monitor!\\
 \verb! !\\
-\verb! !\\ Next item
+\verb! !\\
 \verb! !\\
 \verb! !\\
 \verb! !\\
@@ -372,12 +386,12 @@ Create sessions for multiple monitors:
 
 
 % column 1
-\columnbreak
-\section{}
-\verb! !\\
+% \columnbreak
+% \section{}
+% \verb! !\\
 
-\verb! !\\
-\verb! !\\
+% \verb! !\\
+% \verb! !\\
 
 
 
